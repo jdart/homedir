@@ -1,0 +1,11 @@
+
+$if mode=vi                
+    # normal mode                           
+    set keymap vi-command                                 
+    #"l": backward-char
+    #"h": forward-char         
+    # insert mode             
+    set keymap vi-insert                          
+    "jj": vi-movement-mode # remap escape   
+$endif 
+

@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[core]
+# Please adapt and uncomment the following lines:
+	user = Jonathan Dart
+	email = jonathandart@gmail.com
+	excludesfile = /Users/jonathan.dart/.gitignore_global
+[user]
+	name = Jonathan Dart
+	email = jonathandart@gmail.com
+[push]
+	default = simple
