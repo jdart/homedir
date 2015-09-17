@@ -5,6 +5,7 @@ if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
 fi
 
 export PATH=$PATH:~/bin/
+export CHROME_BIN=/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary
 #export EDITOR='subl -w'
 
 alias fit="cut -c1-$(stty size <&2 | cut -d' ' -f2)"
