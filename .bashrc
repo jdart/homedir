@@ -9,6 +9,7 @@ export PATH=$PATH:~/bin/
 
 alias fit="cut -c1-$(stty size <&2 | cut -d' ' -f2)"
 alias chrome="open -a Google\ Chrome\ Canary --args --disable-web-security"
+alias vimr='open -a "VimR"'
 alias vim=vimr
 
 cd () { builtin cd "$@" && chpwd; }
@@ -24,7 +25,6 @@ chpwd () {
 }
 chpwd
 
-source /usr/local/opt/nvm/nvm.sh
 
 set -o vi
 
