@@ -6,7 +6,7 @@ fi
 
 export PATH=$PATH:~/bin/
 export CHROME_BIN=/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary
-#export EDITOR='subl -w'
+export EDITOR='subl -w'
 
 alias fit="cut -c1-$(stty size <&2 | cut -d' ' -f2)"
 alias chrome="open -a Google\ Chrome\ Canary --args --disable-web-security"

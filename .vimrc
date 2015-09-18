@@ -101,7 +101,7 @@ endif
 
 " K to search for current word
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 
 " Trim whitespace
@@ -110,5 +110,8 @@ autocmd FileType js,json,rb autocmd BufWritePre <buffer> :%s/\s\+$//e
 " custom leader
 let mapleader=","
 set timeout timeoutlen=1500
+
+" ,cc comment toggler
+map <leader>cc <plug>NERDCommenterToggle
 
 
