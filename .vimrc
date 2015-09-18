@@ -1,9 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.nvim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -16,7 +14,7 @@ Plugin 'gilgigilgil/anderson.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
-call vundle#end()            " required
+call vundle#end()
 
 
 " Colors
@@ -109,3 +107,8 @@ nnoremap \ :Ag<SPACE>
 " Trim whitespace
 autocmd FileType js,json,rb autocmd BufWritePre <buffer> :%s/\s\+$//e
  
+" custom leader
+let mapleader=","
+set timeout timeoutlen=1500
+
+
