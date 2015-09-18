@@ -106,3 +106,6 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 
+" Trim whitespace
+autocmd FileType js,json,rb autocmd BufWritePre <buffer> :%s/\s\+$//e
+ 
