@@ -1,0 +1,5 @@
+
+brew install Caskroom/cask/vimr
+brew install editorconfig ag vimr
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
