@@ -4,6 +4,7 @@
 	user = Jonathan Dart
 	email = jonathandart@gmail.com
 	excludesfile = /Users/jonathan.dart/.gitignore_global
+	editor = mvim -f
 [user]
 	name = Jonathan Dart
 	email = jonathandart@gmail.com

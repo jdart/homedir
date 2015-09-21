@@ -13,15 +13,18 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'gilgigilgil/anderson.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 call vundle#end()
-
 
 " Colors
 colorscheme anderson
 
 " Fonts
 set guifont=Hack:h15
+"set encoding=utf8
+set fillchars+=vert:│
+autocmd ColorScheme * hi VertSplit ctermbg=NONE guibg=NONE
 
 " General
 syntax on
@@ -34,7 +37,11 @@ set shiftwidth=2
 set mouse=a
 set autoindent
 set dir=~/tmp
+"tabs=true
 filetype plugin indent on
+
+set guioptions-=r 
+set guioptions-=l
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -114,4 +121,7 @@ set timeout timeoutlen=1500
 " ,cc comment toggler
 map <leader>cc <plug>NERDCommenterToggle
 
+" Eazy nerdtree
+map <leader>n <plug>NERDTreeTabsToggle<CR>
+"let g:NERDTreeMapOpenInTab='<CR>'
 

@@ -6,12 +6,13 @@ fi
 
 export PATH=$PATH:~/bin/
 export CHROME_BIN=/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary
-export EDITOR='subl -w'
 
 alias fit="cut -c1-$(stty size <&2 | cut -d' ' -f2)"
 alias chrome="open -a Google\ Chrome\ Canary --args --disable-web-security"
 alias vimr='open -a "VimR"'
-alias vim=vimr
+alias vim=mvim
+alias vi=mvim
+export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a iTerma"'
 
 cd () { builtin cd "$@" && chpwd; }
 pushd () { builtin pushd "$@" && chpwd; }
