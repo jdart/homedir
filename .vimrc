@@ -41,7 +41,7 @@ set dir=~/tmp
 filetype plugin indent on
 
 set guioptions-=r 
-set guioptions-=l
+set guioptions-=L
 
 " Airline
 let g:airline_powerline_fonts = 1
