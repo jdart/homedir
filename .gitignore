@@ -1,8 +1,7 @@
 # ignore all
 *
 
-!.nvim/
-!.nvim/nvimrc
+!bin/*
 !.vimrc
 !.bashrc
 !.inputrc
