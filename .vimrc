@@ -15,6 +15,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'kien/ctrlp.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'terryma/vim-multiple-cursors'
 call vundle#end()
 
 " Colors
@@ -111,7 +112,7 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 
-" Trim whitespace
+" Trim whitespace on save
 autocmd FileType js,json,rb autocmd BufWritePre <buffer> :%s/\s\+$//e
  
 " custom leader
@@ -124,4 +125,8 @@ map <leader>cc <plug>NERDCommenterToggle
 " Eazy nerdtree
 map <leader>n <plug>NERDTreeTabsToggle<CR>
 "let g:NERDTreeMapOpenInTab='<CR>'
+
+" Clear highlighting on escape in normal mode
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
 
