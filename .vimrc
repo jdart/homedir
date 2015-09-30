@@ -16,6 +16,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'easymotion/vim-easymotion'
 call vundle#end()
 
 " Colors
@@ -23,7 +24,7 @@ colorscheme anderson
 
 " Fonts
 set guifont=Hack:h15
-"set encoding=utf8
+set encoding=utf8
 set fillchars+=vert:│
 autocmd ColorScheme * hi VertSplit ctermbg=NONE guibg=NONE
 
@@ -38,19 +39,21 @@ set shiftwidth=2
 set mouse=a
 set autoindent
 set dir=~/tmp
+set hlsearch
 "tabs=true
 filetype plugin indent on
 
-set guioptions-=r 
+set guioptions-=r
 set guioptions-=L
 
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
+let g:airline#extensions#whitespace#checks = []  
 
 " VCS
 let g:gitgutter_realtime = 1
- 
+
 " ctrlp
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tmp)|(\.(swp|ico|git|svn))$'
 let g:ctrlp_prompt_mappings = {
@@ -114,7 +117,7 @@ nnoremap \ :Ag<SPACE>
 
 " Trim whitespace on save
 autocmd FileType js,json,rb autocmd BufWritePre <buffer> :%s/\s\+$//e
- 
+
 " custom leader
 let mapleader=","
 set timeout timeoutlen=1500
@@ -129,4 +132,27 @@ map <leader>n <plug>NERDTreeTabsToggle<CR>
 " Clear highlighting on escape in normal mode
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
+
+" Easy motion stuff
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Bi-directional find motion
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+"nmap s <Plug>(easymotion-s)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+" Replace default search
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
 
