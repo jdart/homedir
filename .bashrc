@@ -4,8 +4,15 @@ if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
     source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
+export GOPATH=$HOME/Go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
 export PATH=$PATH:~/bin/
 export CHROME_BIN=/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary
+
+source ~/.secrets
 
 alias fit="cut -c1-$(stty size <&2 | cut -d' ' -f2)"
 alias chrome="open -a Google\ Chrome\ Canary --args --disable-web-security"
