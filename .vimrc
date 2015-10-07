@@ -123,7 +123,8 @@ let mapleader=","
 set timeout timeoutlen=1500
 
 " ,cc comment toggler
-map <leader>cc <plug>NERDCommenterToggle
+nmap <leader>cc <plug>NERDCommenterToggle
+vmap <leader>cc <plug>NERDCommenterToggle
 
 " Eazy nerdtree
 map <leader>n <plug>NERDTreeTabsToggle<CR>
