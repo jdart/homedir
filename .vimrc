@@ -17,6 +17,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'scrooloose/syntastic'
 call vundle#end()
 
 " Colors
@@ -156,4 +157,16 @@ map <Leader>k <Plug>(easymotion-k)
 " Replace default search
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint', 'jshint']
 
