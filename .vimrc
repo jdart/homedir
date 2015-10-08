@@ -18,10 +18,12 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/syntastic'
+Plugin 'xero/sourcerer.vim'
+Plugin 'kristijanhusak/vim-hybrid-material'
 call vundle#end()
 
 " Colors
-colorscheme anderson
+colorscheme hybrid_reverse 
 
 " Fonts
 set guifont=Hack:h15
