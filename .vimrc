@@ -19,6 +19,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'xero/sourcerer.vim'
+Plugin 'wavded/vim-stylus'
 Plugin 'kristijanhusak/vim-hybrid-material'
 call vundle#end()
 
@@ -43,6 +44,7 @@ set mouse=a
 set autoindent
 set dir=~/tmp
 set hlsearch
+set cursorline 
 "tabs=true
 filetype plugin indent on
 
@@ -65,7 +67,11 @@ let g:ctrlp_prompt_mappings = {
     \ }
 
 " jj does esc
-imap jj <Esc>
+imap jk <Esc>
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
 
 " Disable arrows
 map <up> <nop>
@@ -171,4 +177,5 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['eslint', 'jshint']
+command! St SyntasticToggleMode
 
