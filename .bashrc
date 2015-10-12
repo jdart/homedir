@@ -8,11 +8,13 @@ export GOPATH=$HOME/Go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
-
+export PATH="/usr/local/sbin:$PATH"
 export PATH=$PATH:~/bin/
 export CHROME_BIN=/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary
+export ANDROID_HOME=/usr/local/opt/android-sdk
 
 source ~/.secrets
+source ~/.git-completion.sh
 
 alias fit="cut -c1-$(stty size <&2 | cut -d' ' -f2)"
 alias chrome="open -a Google\ Chrome\ Canary --args --disable-web-security"
@@ -33,7 +35,6 @@ chpwd () {
   fi
 }
 chpwd
-
 
 set -o vi
 ulimit -n 1024
