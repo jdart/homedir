@@ -42,3 +42,4 @@ ulimit -u 1024
 
 export NVM_DIR="/Users/jonathandart/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
