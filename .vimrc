@@ -17,14 +17,19 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'scrooloose/syntastic'
 Plugin 'xero/sourcerer.vim'
 Plugin 'wavded/vim-stylus'
 Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'xolox/vim-misc'
+Plugin 'wimstefan/Lightning'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'NLKNguyen/papercolor-theme'
 call vundle#end()
 
 " Colors
-colorscheme hybrid_reverse 
+"colorscheme lightning
+colorscheme PaperColor
 
 " Fonts
 set guifont=Hack:h15
@@ -53,7 +58,7 @@ set guioptions-=L
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='molokai'
+let g:airline_theme='papercolor'
 let g:airline#extensions#whitespace#checks = []  
 
 " VCS
@@ -70,8 +75,8 @@ let g:ctrlp_prompt_mappings = {
 imap jk <Esc>
 
 " move vertically by visual line
-nnoremap j gj
-nnoremap k gk
+"nnoremap j gj
+"nnoremap k gk
 
 " Disable arrows
 map <up> <nop>
@@ -168,15 +173,4 @@ omap / <Plug>(easymotion-tn)
 
 " syntastic
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
-
-let g:syntastic_javascript_checkers = ['eslint', 'jshint']
-command! St SyntasticToggleMode
-

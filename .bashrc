@@ -13,6 +13,9 @@ export PATH=$PATH:~/bin/
 export CHROME_BIN=/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 source ~/.secrets
 source ~/.git-completion.sh
 
@@ -37,9 +40,7 @@ chpwd () {
 chpwd
 
 set -o vi
-ulimit -n 1024
+ulimit -n 2048
 ulimit -u 1024
 
-export NVM_DIR="/Users/jonathandart/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
