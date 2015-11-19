@@ -71,6 +71,12 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
 
+" W = w
+command! WQ wq
+command! Wq wq
+command! W w
+command! Q q
+
 " jj does esc
 imap jk <Esc>
 
