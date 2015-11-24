@@ -22,10 +22,8 @@ Plugin 'wavded/vim-stylus'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'xolox/vim-misc'
-Plugin 'wimstefan/Lightning'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
 " Colors
