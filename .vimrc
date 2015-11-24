@@ -25,6 +25,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'wimstefan/Lightning'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
 " Colors
