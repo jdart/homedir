@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+set hidden
 filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -12,7 +13,7 @@ Plugin 'powerline/fonts'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gilgigilgil/anderson.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
@@ -24,7 +25,12 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'xolox/vim-misc'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'rking/ag.vim'
 call vundle#end()
+
+if executable("ag")
+  let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+endif
 
 " Colors
 "colorscheme lightning
@@ -120,14 +126,8 @@ augroup reload_vimrc " {
 augroup END " }
 
 " silver searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
+let g:ag_working_path_mode="r"
+
 
 " K to search for current word
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
