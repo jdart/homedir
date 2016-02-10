@@ -28,10 +28,6 @@ Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'rking/ag.vim'
 call vundle#end()
 
-if executable("ag")
-  let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
-endif
-
 " Colors
 "colorscheme lightning
 colorscheme PaperColor
@@ -75,6 +71,9 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_working_path_mode = 'ra'
+
 
 " W = w
 command! WQ wq
@@ -82,7 +81,7 @@ command! Wq wq
 command! W w
 command! Q q
 
-" jj does esc
+" jk does esc
 imap jk <Esc>
 
 " move vertically by visual line
@@ -126,12 +125,10 @@ augroup reload_vimrc " {
 augroup END " }
 
 " silver searcher
-let g:ag_working_path_mode="r"
-
+"let g:ag_working_path_mode="r"
 
 " K to search for current word
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 
 " Trim whitespace on save
@@ -147,6 +144,8 @@ vmap <leader>cc <plug>NERDCommenterToggle
 
 " Eazy nerdtree
 map <leader>n <plug>NERDTreeTabsToggle<CR>
+nmap <leader>nf :NERDTreeFind<CR>
+vmap <leader>nf :NERDTreeFind<CR>
 "let g:NERDTreeMapOpenInTab='<CR>'
 
 " Clear highlighting on escape in normal mode
@@ -179,3 +178,11 @@ omap / <Plug>(easymotion-tn)
 " syntastic
 set statusline+=%#warningmsg#
 set statusline+=%*
+
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+if has('persistent_undo')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif

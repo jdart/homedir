@@ -40,7 +40,6 @@ chpwd () {
 chpwd
 
 set -o vi
-ulimit -n 2048
-ulimit -u 1024
+ulimit -n 5000
 
 
