@@ -190,5 +190,6 @@ if has('persistent_undo')
   set undofile
 endif
 
+" show whitespace chars with ':set list', disable with ':set invlist'
 set listchars=eol:$,tab:--,trail:~,extends:>,precedes:<
 
