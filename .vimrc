@@ -1,5 +1,7 @@
 set nocompatible              " be iMproved, required
 set hidden
+set splitbelow
+set splitright
 filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -9,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'powerline/fonts'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gilgigilgil/anderson.vim'
@@ -186,3 +189,6 @@ if has('persistent_undo')
   set undodir=~/.vim/backups
   set undofile
 endif
+
+set listchars=eol:$,tab:--,trail:~,extends:>,precedes:<
+

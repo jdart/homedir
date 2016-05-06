@@ -42,4 +42,22 @@ chpwd
 set -o vi
 ulimit -n 5000
 
+alias doc='docker-machine start default && eval "$(docker-machine env default)"'
 
+launchctlFind () {
+    LaunchctlPATHS=( \
+        ~/Library/LaunchAgents \
+        /Library/LaunchAgents \
+        /Library/LaunchDaemons \
+        /System/Library/LaunchAgents \
+        /System/Library/LaunchDaemons \
+    )
+
+    for curPATH in "${LaunchctlPATHS[@]}"
+    do
+        grep -r "$curPATH" -e "$1"
+    done
+    return 0;
+}
+
+alias kmcaf='sudo launchctl unload /Library/LaunchDaemons/com.mcafee.*'
