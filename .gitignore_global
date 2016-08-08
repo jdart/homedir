@@ -3,4 +3,5 @@
 .DS_Store
 *.apk*
 *.swp
+.netlify
 

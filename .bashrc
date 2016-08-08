@@ -60,4 +60,4 @@ launchctlFind () {
     return 0;
 }
 
-alias kmcaf='sudo launchctl unload /Library/LaunchDaemons/com.mcafee.*'
+alias kmcaf='sudo launchctl unload /Library/LaunchDaemons/com.mcafee.* && pkill "McAfee Reporter" && pkill Menulet'

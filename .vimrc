@@ -98,12 +98,10 @@ map <left> <nop>
 map <right> <nop>
 
 " Alt nagivates windows
-if has('gui_running')
-		nnoremap ˙ <C-w>h
-		nnoremap ∆ <C-w>j
-		nnoremap ˚ <C-w>k
-		nnoremap ¬ <C-w>l
-endif
+nnoremap ˙ <C-w>h
+nnoremap ∆ <C-w>j
+nnoremap ˚ <C-w>k
+nnoremap ¬ <C-w>l
 
 " Eazy copy
 vnoremap <C-c> "*y
@@ -192,4 +190,7 @@ endif
 
 " show whitespace chars with ':set list', disable with ':set invlist'
 set listchars=eol:$,tab:--,trail:~,extends:>,precedes:<
+ 
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
 
