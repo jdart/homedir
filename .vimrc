@@ -2,6 +2,8 @@ set nocompatible              " be iMproved, required
 set hidden
 set splitbelow
 set splitright
+set termguicolors
+set title
 filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -13,26 +15,19 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'powerline/fonts'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'gilgigilgil/anderson.vim'
-Plugin 'tpope/vim-fugitive'
+"Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'xero/sourcerer.vim'
-Plugin 'wavded/vim-stylus'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'xolox/vim-misc'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'rking/ag.vim'
 call vundle#end()
 
 " Colors
-"colorscheme lightning
 colorscheme PaperColor
 
 " Fonts
@@ -55,15 +50,17 @@ set dir=~/tmp
 set hlsearch
 set cursorline 
 "tabs=true
+set guioptions+=c
 filetype plugin indent on
 
 set guioptions-=r
 set guioptions-=L
 
 " Airline
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 let g:airline_theme='papercolor'
 let g:airline#extensions#whitespace#checks = []  
+
 
 " VCS
 let g:gitgutter_realtime = 1
@@ -75,6 +72,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
 let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
 
 
@@ -191,6 +189,6 @@ endif
 " show whitespace chars with ':set list', disable with ':set invlist'
 set listchars=eol:$,tab:--,trail:~,extends:>,precedes:<
  
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprevious<CR>
+"nnoremap <C-n> :bnext<CR>
+"nnoremap <C-p> :bprevious<CR>
 

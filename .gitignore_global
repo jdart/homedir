@@ -4,4 +4,6 @@
 *.apk*
 *.swp
 .netlify
+.agignore
+yarn.lock
 
