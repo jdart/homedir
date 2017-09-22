@@ -29,6 +29,7 @@ call vundle#end()
 
 " Colors
 colorscheme PaperColor
+set background=light
 
 " Fonts
 set guifont=Hack:h15
@@ -66,7 +67,7 @@ let g:airline#extensions#whitespace#checks = []
 let g:gitgutter_realtime = 1
 
 " ctrlp
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tmp)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tmp|coverage)|(\.(swp|ico|git|svn))$'
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
@@ -74,6 +75,7 @@ let g:ctrlp_prompt_mappings = {
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
 " W = w

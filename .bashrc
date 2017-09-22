@@ -13,13 +13,14 @@ export PATH=$PATH:~/.composer/vendor/bin
 export PATH="/usr/local/sbin:$PATH"
 export PATH=$PATH:~/bin
 export CHROME_BIN=/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary
-export ANDROID_HOME=/usr/local/opt/android-sdk
+export PATH=$HOME/.fastlane/bin:$PATH
+export PATH=$PATH:~/Library/Android/sdk/platform-tools
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
-source ~/.secrets
-source ~/.git-completion.sh
+#source ~/.secrets
+#source ~/.git-completion.sh
 
 alias fit="cut -c1-$(stty size <&2 | cut -d' ' -f2)"
 alias chrome="open -a Google\ Chrome\ Canary --args --disable-web-security --user-data-dir=/Users/jonathan.dart/Library/Application\ Support/Google/Chrome/Default"

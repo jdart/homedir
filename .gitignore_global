@@ -6,4 +6,6 @@
 .netlify
 .agignore
 yarn.lock
+.vscode
 
+node_modules
