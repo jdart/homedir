@@ -9,3 +9,9 @@ yarn.lock
 .vscode
 
 node_modules
+.ignore
+.classpath
+.project
+nb-configuration.xml
+.settings/
+

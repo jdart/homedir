@@ -24,7 +24,9 @@ Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'xolox/vim-misc'
 Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'wavded/vim-stylus'
 call vundle#end()
 
 " Colors
@@ -127,10 +129,13 @@ augroup END " }
 
 " silver searcher
 "let g:ag_working_path_mode="r"
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " K to search for current word
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap \ :Ag<SPACE>
+nnoremap \ :Ack<SPACE>
 
 " Trim whitespace on save
 autocmd FileType js,json,rb autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -180,6 +185,7 @@ omap / <Plug>(easymotion-tn)
 set statusline+=%#warningmsg#
 set statusline+=%*
 
+
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
 if has('persistent_undo')
@@ -190,6 +196,13 @@ endif
 
 " show whitespace chars with ':set list', disable with ':set invlist'
 set listchars=eol:$,tab:--,trail:~,extends:>,precedes:<
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_html_checkers=['']
+
  
 "nnoremap <C-n> :bnext<CR>
 "nnoremap <C-p> :bprevious<CR>
